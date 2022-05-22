@@ -1,0 +1,67 @@
+.dice-roller {
+  background-color: var(--color-pri-10);
+  border-radius: var(--border-rad);
+  flex-basis: 50%;
+  max-width: 1500px;
+
+  padding: var(--padding-site);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  &__form,
+  .dice-display {
+    flex-basis: 50%;
+  }
+
+  &__divider {
+    background-color: var(--color-sec);
+    width: 4px;
+    height: 450px;
+    margin: 0.5rem 2rem;
+    border-radius: 1rem;
+  }
+
+  &__form {
+    padding: var(--padding-site);
+    height: fit-content;
+
+    border-radius: var(--border-rad);
+    //border: 2px solid var(--color-pri);
+
+    display: flex;
+    row-gap: 1rem;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__label {
+      height: fit-content;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      width: 45%;
+      min-width: 280px;
+
+      &__title {
+        height: fit-content;
+      }
+
+      &__advantage {
+        input[type="checkbox"] {
+          width: 3rem;
+        }
+      }
+    }
+
+    &__roll {
+      margin: 0 auto;
+    }
+  }
+}
+
+.total {
+  color: var(--color-sec);
+}

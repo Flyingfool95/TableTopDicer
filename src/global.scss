@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
+:root {
+  //Color
+  --color-pri: #d3bb8d;
+  --color-pri-10: rgba(211, 186, 141, 0.05);
+  --color-sec: #e75c48;
+  --color-tet: #586671;
+
+  --color-bg-dark: #111;
+  --color-bg-light: #eeeeee;
+  --color-txt-dark: #222;
+  --color-txt-light: #fafafa;
+
+  //Text
+  --font-size-default: 64px;
+  --font-family-heading: "MedievalSharp", cursive;
+  --font-family-body: "MedievalSharp", cursive;
+
+  //Widths
+  --max-width-text: 75ch;
+
+  //Borders
+  --border-btm: 3px solid var(--color-pri);
+  --border-rad: 0.25rem;
+
+  //Padding & margin
+  --padding-site: 2rem;
+  --padding-btn: 0.5rem 2rem;
+
+  //Transitions
+  --transition-default: 100ms ease-in-out;
+
+  //Gap
+  --gap-normal: 1rem;
+
+  //Box shadow
+  --box-shadow-default: 0 0 5px 0 var(--color-txt-light);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/////////////////////
+//Text
+/////////////////////
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-pri);
+  font-family: var(--font-family-heading);
+  margin: 0.5em 0;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: var(--font-size-default);
+}
+h2 {
+  font-size: calc(var(--font-size-default) * 0.5);
+}
+
+p,
+a,
+span,
+select,
+option,
+input[type="number"] {
+  font-family: var(--font-family-body);
+  font-size: calc(var(--font-size-default) * 0.5);
+  max-width: var(--max-width-text);
+  color: var(--color-txt-light);
+  text-decoration: none;
+}
+select,
+option,
+input[type="number"],
+input[type="checkbox"] {
+  border-radius: var(--border-rad);
+  background-color: var(--color-tet) !important;
+  color: var(--color-pri) !important;
+
+  font-size: 32px;
+  color: var(--color-txt-dark);
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+option {
+  font-size: 22px;
+}
+
+//Removes input number arrows
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/////////////////////
+//Button
+/////////////////////
+button,
+input[type="submit"] {
+  font-family: var(--font-family-body);
+  font-size: calc(var(--font-size-default) * 0.5);
+  padding: var(--padding-btn);
+  color: var(--color-sec);
+
+  border-style: solid;
+  border-color: var(--color-sec);
+  border-radius: var(--border-rad);
+
+  background-color: transparent;
+
+  transition: var(--transition-default);
+
+  &:hover {
+    background-color: var(--color-sec);
+    color: var(--color-txt-light);
+    cursor: pointer;
+  }
+  &:active {
+    background-color: transparent;
+    color: var(--color-sec);
+    cursor: pointer;
+  }
+}

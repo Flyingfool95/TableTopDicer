@@ -1,0 +1,21 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: var(--padding-site);
+
+  background-color: var(--color-bg-dark);
+  color: var(--color-txt-light);
+  min-height: 100vh;
+  > * {
+    flex-grow: 1;
+  }
+
+  &__links {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    position: relative;
+  }
+}

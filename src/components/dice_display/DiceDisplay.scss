@@ -1,0 +1,25 @@
+.dice-display {
+  height: fit-content;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  place-self: center;
+  place-items: center;
+
+  gap: 2rem;
+
+  &__dice {
+    height: 75px;
+    width: 75px;
+    background-color: var(--color-tet);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-rad);
+    span {
+      color: var(--color-pri) !important;
+    }
+  }
+}

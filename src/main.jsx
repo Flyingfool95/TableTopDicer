@@ -1,0 +1,16 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import UtilsContextProvider from "./contexts/UtilsContext";
+import "./global.scss";
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <UtilsContextProvider>
+        <App />
+      </UtilsContextProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
