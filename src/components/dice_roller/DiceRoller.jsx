@@ -21,8 +21,8 @@ export default function DiceRoller() {
     if (amount < 1) {
       setAmount(1);
     }
-    if (amount > 20) {
-      setAmount(20);
+    if (amount > 18) {
+      setAmount(18);
     }
 
     return () => {};
@@ -100,7 +100,7 @@ export default function DiceRoller() {
               </div>
               <p
                 className="dice-roller__form__label__buttons__amount"
-                onClick={() => setAmount(0)}
+                onClick={() => setAmount(1)}
               >
                 {amount}
               </p>

@@ -36,6 +36,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
+    flex-basis: 25%;
 
     &__label {
       height: fit-content;
@@ -77,7 +78,7 @@
     }
 
     &__roll {
-      margin: 0 auto;
+      margin: 0 0 0 auto;
     }
   }
 }
