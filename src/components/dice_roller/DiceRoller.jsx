@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DiceDisplay from "../dice_display/DiceDisplay";
 import useDice from "../../hooks/useDice";
 import "./DiceRoller.scss";
@@ -6,7 +6,6 @@ import "./DiceRoller.scss";
 export default function DiceRoller() {
   const [dice, setDice] = useState(6);
   const [amount, setAmount] = useState(1);
-  const [advantage, setAdvantage] = useState(false);
   const [modifier, setModifier] = useState(0);
   const [res, setRes] = useState(0);
 
@@ -15,8 +14,30 @@ export default function DiceRoller() {
   const handleDiceRoll = (e) => {
     e.preventDefault();
 
-    setRes(RollDice(dice, amount, modifier, advantage));
+    setRes(RollDice(dice, amount, modifier));
   };
+
+  useEffect(() => {
+    if (amount < 1) {
+      setAmount(1);
+    }
+    if (amount > 20) {
+      setAmount(20);
+    }
+
+    return () => {};
+  }, [amount]);
+
+  useEffect(() => {
+    if (modifier < -10) {
+      setModifier(-10);
+    }
+    if (modifier > 15) {
+      setModifier(15);
+    }
+
+    return () => {};
+  }, [modifier]);
 
   return (
     <>
@@ -43,46 +64,54 @@ export default function DiceRoller() {
 
           <label className="dice-roller__form__label">
             <h2 className="dice-roller__form__label__title">Modifier:</h2>
-            <div>
-              <span>{modifier}</span>
-              <input
-                type="range"
-                name="Modifier"
-                id="modifier"
-                min={-20}
-                max={20}
-                defaultValue={modifier}
-                onChange={(e) => setModifier(parseInt(e.target.value))}
-              />
+            <div className="dice-roller__form__label__buttons">
+              <div
+                type="button"
+                className="dice-roller__form__label__buttons__button"
+                onClick={() => setModifier((prev) => prev - 1)}
+              >
+                -
+              </div>
+              <p
+                className="dice-roller__form__label__buttons__amount"
+                onClick={() => setModifier(0)}
+              >
+                {modifier}
+              </p>
+              <div
+                type="button"
+                className="dice-roller__form__label__buttons__button"
+                onClick={() => setModifier((prev) => prev + 1)}
+              >
+                +
+              </div>
             </div>
-            <p onClick={() => setModifier(0)}>Reset</p>
           </label>
 
           <label className="dice-roller__form__label">
             <h2 className="dice-roller__form__label__title">Amount:</h2>
-            <div>
-              <span>{amount}</span>
-              <input
-                type="range"
-                name="Amount"
-                id="amount"
-                min={1}
-                max={20}
-                defaultValue={amount}
-                onChange={(e) => setAmount(parseInt(e.target.value))}
-              />
+            <div className="dice-roller__form__label__buttons">
+              <div
+                type="button"
+                className="dice-roller__form__label__buttons__button"
+                onClick={() => setAmount((prev) => prev - 1)}
+              >
+                -
+              </div>
+              <p
+                className="dice-roller__form__label__buttons__amount"
+                onClick={() => setAmount(0)}
+              >
+                {amount}
+              </p>
+              <div
+                type="button"
+                className="dice-roller__form__label__buttons__button"
+                onClick={() => setAmount((prev) => prev + 1)}
+              >
+                +
+              </div>
             </div>
-            <p onClick={() => setAmount(1)}>Reset</p>
-          </label>
-
-          <label className="dice-roller__form__label dice-roller__form__label__advantage">
-            <h2 className="dice-roller__form__label__title">Adv./Dis.:</h2>
-            <input
-              type="checkbox"
-              disabled={dice !== 20} // Can only have advantage on d20 rolls
-              checked={advantage && dice === 20}
-              onChange={(e) => setAdvantage(e.target.checked)}
-            />
           </label>
 
           <input

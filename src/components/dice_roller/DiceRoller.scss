@@ -42,15 +42,35 @@
       display: flex;
       justify-content: flex-end;
       gap: 1rem;
-      width: 45%;
+      width: 100%;
       min-width: 280px;
 
       &__title {
         height: fit-content;
       }
 
-      &__advantage {
-        input[type="checkbox"] {
+      &__buttons {
+        display: flex;
+        align-items: center;
+        width: 150px;
+
+        &__button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid var(--color-sec);
+          height: 3rem;
+          width: 3rem;
+          padding: 1rem;
+          cursor: pointer;
+        }
+
+        &__amount {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 1rem;
+          cursor: pointer;
           width: 3rem;
         }
       }
