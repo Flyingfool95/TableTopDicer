@@ -22,4 +22,8 @@
       color: var(--color-pri) !important;
     }
   }
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

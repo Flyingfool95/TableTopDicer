@@ -36,6 +36,10 @@
 
   //Box shadow
   --box-shadow-default: 0 0 5px 0 var(--color-txt-light);
+
+  @media (max-width: 960px) {
+    --font-size-default: 36px;
+  }
 }
 
 body {
@@ -75,6 +79,9 @@ h1 {
 }
 h2 {
   font-size: calc(var(--font-size-default) * 0.5);
+  @media (max-width: 960px) {
+    font-size: calc(var(--font-size-default) * 0.66);
+  }
 }
 
 p,

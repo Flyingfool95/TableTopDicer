@@ -86,3 +86,27 @@
 .total {
   color: var(--color-sec);
 }
+
+@media (max-width: 960px) {
+  .dice-roller {
+    flex-direction: column;
+    padding: 0;
+    background-color: transparent;
+
+    &__divider {
+      width: 80%;
+      height: 4px;
+    }
+    &__form {
+      flex-direction: column;
+
+      flex-basis: 100%;
+      &__label {
+        justify-content: center;
+      }
+      &__roll {
+        margin: 0 auto;
+      }
+    }
+  }
+}
