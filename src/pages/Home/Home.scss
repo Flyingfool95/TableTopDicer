@@ -11,4 +11,11 @@
   > * {
     flex-grow: 1;
   }
+
+  @media (max-width: 960px) {
+    justify-content: center;
+    > * {
+      flex-grow: 0;
+    }
+  }
 }

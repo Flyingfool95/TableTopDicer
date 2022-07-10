@@ -29,7 +29,6 @@ export default function DiceRoller() {
   }, [amount]);
 
   useEffect(() => {
-    setRes(0);
     if (modifier < -10) {
       setModifier(-10);
     }
