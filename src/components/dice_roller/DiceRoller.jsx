@@ -29,6 +29,7 @@ export default function DiceRoller() {
   }, [amount]);
 
   useEffect(() => {
+    setRes(0);
     if (modifier < -10) {
       setModifier(-10);
     }
@@ -127,7 +128,9 @@ export default function DiceRoller() {
         <DiceDisplay dice={res.mixedDice} />
       </div>
       <h1 className="total">
-        Total: {res.totalModifier ?? 0} ({res.totalRoll ?? 0} + {modifier})
+        Total: {res.totalModifier ?? 0}
+        {modifier && res.totalRoll ? ` (${res.totalRoll} + ${modifier})` : ""}
+        {modifier == 0 && ""}
       </h1>
     </>
   );

@@ -28,7 +28,6 @@
     height: fit-content;
 
     border-radius: var(--border-rad);
-    //border: 2px solid var(--color-pri);
 
     display: flex;
     row-gap: 1rem;
@@ -96,17 +95,21 @@
     &__divider {
       width: 80%;
       height: 4px;
+      margin: 0.5rem;
     }
     &__form {
       flex-direction: column;
-
       flex-basis: 100%;
+      padding: 0.5rem;
       &__label {
-        justify-content: center;
+        justify-content: flex-end;
       }
       &__roll {
         margin: 0 auto;
       }
     }
+  }
+  .total {
+    font-size: calc(var(--font-size-default) / 1.25);
   }
 }

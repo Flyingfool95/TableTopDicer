@@ -24,6 +24,10 @@
   }
 
   @media (max-width: 960px) {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    &__dice {
+      height: 40px;
+      width: 40px;
+    }
   }
 }
