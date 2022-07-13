@@ -63,11 +63,8 @@ export default function useAddProject() {
   }
 
   //Rolling the dice function
-  const RollDice = (selectedDice, amount = 1, modifier = 0, advantage) => {
+  const RollDice = (selectedDice, amount = 1, modifier = 0) => {
 
-    if (advantage) {
-      amount = 2
-    }
     //Resets all variables
     let mixedDice = [];
     let totalRoll = 0;
